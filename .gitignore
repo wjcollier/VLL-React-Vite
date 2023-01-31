@@ -1,9 +1,7 @@
-index.txt
+
 .DS_Store
 
-style-guide.md
 .vscode
 
 .env
-*.txt
-*.md
+

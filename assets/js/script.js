@@ -1,14 +1,14 @@
-'use strict';
+'use strict'
 
 /**
  * PRELOADER
  */
 
-const preloader = document.querySelector('[data-preloader]');
+const preloader = document.querySelector('[data-preloader]')
 
-window.addEventListener('DOMContentLoaded', function() {
-    preloader.classList.add('loaded');
-    document.body.classList.add('loaded')
+window.addEventListener('DOMContentLoaded', function () {
+	preloader.classList.add('loaded')
+	document.body.classList.add('loaded')
 })
 
 /**
@@ -27,8 +27,6 @@ const navbar = document.querySelector('[data-navbar]')
 const navTogglers = document.querySelectorAll('[data-nav-toggler]')
 const navLinks = document.querySelectorAll('[data-nav-link]')
 const overlay = document.querySelector('[data-overlay]')
-
-
 
 addEventOnElements(navTogglers, 'click', function () {
 	navbar.classList.toggle('active')
@@ -86,64 +84,66 @@ addEventOnElements(tiltElements, 'mouseout', function () {
  * Tab content
  */
 
-const tabBtns = document.querySelectorAll("[data-tab-btn]");
-const tabContents = document.querySelectorAll("[data-tab-content]");
+const tabBtns = document.querySelectorAll('[data-tab-btn]')
+const tabContents = document.querySelectorAll('[data-tab-content]')
 
-let lastActiveTabBtn = tabBtns[1];
-let lastActiveTabContent = tabContents[1];
+let lastActiveTabBtn = tabBtns[1]
+let lastActiveTabContent = tabContents[1]
 
 const filterContent = function () {
-   if (!(lastActiveTabBtn === this)) {
-	  
-	lastActiveTabBtn.classList.remove("active");
-	lastActiveTabContent.classList.remove("active");
+	if (!(lastActiveTabBtn === this)) {
+		lastActiveTabBtn.classList.remove('active')
+		lastActiveTabContent.classList.remove('active')
 
-	this.classList.add("active");
-	lastActiveTabBtn = this;
+		this.classList.add('active')
+		lastActiveTabBtn = this
 
-	const currentTabContent = document.querySelector(`[data-tab-content="${this.dataset.tabBtn}"]`);
+		const currentTabContent = document.querySelector(
+			`[data-tab-content="${this.dataset.tabBtn}"]`
+		)
 
-	currentTabContent.classList.add('active')
-	lastActiveTabContent = currentTabContent;
-   }
+		currentTabContent.classList.add('active')
+		lastActiveTabContent = currentTabContent
+	}
 }
 
-addEventOnElements(tabBtns, "click", filterContent);
+addEventOnElements(tabBtns, 'click', filterContent)
 
 /**
  * Custom cursor
  */
 
-const cursors = document.querySelectorAll("[data-cursor]");
-const hoveredElements = [...document.querySelectorAll("button"), ...document.querySelectorAll("a")];
+const cursors = document.querySelectorAll('[data-cursor]')
+const hoveredElements = [
+	...document.querySelectorAll('button'),
+	...document.querySelectorAll('a'),
+]
 
-window.addEventListener("mousemove", function (event) {
+window.addEventListener('mousemove', function (event) {
+	const posX = event.clientX
+	const posY = event.clientY
 
-  const posX = event.clientX;
-  const posY = event.clientY;
+	/** cursor dot position */
+	cursors[0].style.left = `${posX}px`
+	cursors[0].style.top = `${posY}px`
 
-  /** cursor dot position */
-  cursors[0].style.left = `${posX}px`;
-  cursors[0].style.top = `${posY}px`;
-
-  /** cursor outline position */
-  setTimeout(function () {
-    cursors[1].style.left = `${posX}px`;
-    cursors[1].style.top = `${posY}px`;
-  }, 80);
-
-});
+	/** cursor outline position */
+	setTimeout(function () {
+		cursors[1].style.left = `${posX}px`
+		cursors[1].style.top = `${posY}px`
+	}, 80)
+})
 
 /** add hovered class when mouseover on hoverElements */
-addEventOnElements(hoveredElements, "mouseover", function () {
-  for (let i = 0, len = cursors.length; i < len; i++) {
-    cursors[i].classList.add("hovered");
-  }
-});
+addEventOnElements(hoveredElements, 'mouseover', function () {
+	for (let i = 0, len = cursors.length; i < len; i++) {
+		cursors[i].classList.add('hovered')
+	}
+})
 
 /** remove hovered class when mouseout on hoverElements */
-addEventOnElements(hoveredElements, "mouseout", function () {
-  for (let i = 0, len = cursors.length; i < len; i++) {
-    cursors[i].classList.remove("hovered");
-  }
-});
+addEventOnElements(hoveredElements, 'mouseout', function () {
+	for (let i = 0, len = cursors.length; i < len; i++) {
+		cursors[i].classList.remove('hovered')
+	}
+})

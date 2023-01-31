@@ -45,7 +45,8 @@
    */
 
   /* font family */
-  --fontFamily-recoleta: 'Recoleta';
+  --fontFamily-voyage: 'Voyage';
+  --fontFamily-lighters: 'Lighters';
   --fontFamily-roboto: 'Roboto', sans-serif;
 
   /* font size */
@@ -245,6 +246,7 @@ body.nav-active { overflow: hidden; }
 .h1 {
   font-size: var(--fontSize-2);
   line-height: 1.2;
+  font-family: var(--fontFamily-voyage) ;
 }
 
 .h2,
