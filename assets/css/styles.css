@@ -837,7 +837,24 @@ textarea.input-field {
 }
 
 .contact-item .title { color: var(--text-light-gray); }
-
+.myButton {
+    background-color: #44c767;
+    border-radius: 31px;
+    border: 1px solid #18ab29;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--text-smoky-black);
+    font-family: var(--fontFamily-roboto);
+    font-size: 17px;
+    padding: 16px 31px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+.mail-outline {
+    width: 50px;
+    height: 50px;
+    color: #ff0;
+}
 
 
 
