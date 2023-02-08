@@ -731,6 +731,8 @@ span.title.vll {
 .social-list {
   display: flex;
   align-items: center;
+  width: 100%;
+  justify-content: center;
   gap: 20px;
 }
 
